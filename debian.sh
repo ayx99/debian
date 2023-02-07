@@ -5,8 +5,12 @@
 #######Software & Updates > Debian Software tab > Enable DFSG and non-DFSG compatible software > Close > Reload####
 
 #######installing basic utils and softwares#####
+sudo apt install -y gnome-tweaks
 sudo apt install -y vim
 sudo apt install -y timeshift
+sudo apt install -y git
+sudo apt install -y tldr
+
 # Install tool for hardware detection
 sudo apt install nvidia-detect
 
@@ -17,7 +21,16 @@ sudo nvidia-detect
 sudo apt install nvidia-driver
 
 #Installing AMD drivers
-sudo apt install firmware-linux firmware-linux-nonfree libdrm-amdgpu1 xserver-xorg-video-amdgpu
+#sudo apt install firmware-linux firmware-linux-nonfree libdrm-amdgpu1 xserver-xorg-video-amdgpu 
+#Package firmware-linux is not available, but is referred to by another package.
+#This may mean that the package is missing, has been obsoleted, or
+#is only available from another source
+#However the following packages replace it:
+#  firmware-misc-nonfree
+
+#E: Package 'firmware-linux' has no installation candidate
+#E: Package 'firmware-linux-nonfree' has no installation candidate
+
 
 #Installing Vulcan(helpful if you play games)
 sudo apt install -y mesa-vulkan-drivers libvulkan1 vulkan-tools vulkan-validationlayers
